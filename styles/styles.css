@@ -1,0 +1,30 @@
+html {
+    background-color: black;
+}
+
+body {
+    border: 1px solid white;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid white;
+    align-items: center;
+}
+
+.nav-buttons a{
+    padding: 0.5rem;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: #cb2233;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid white;
+}
