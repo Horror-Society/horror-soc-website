@@ -1,20 +1,54 @@
-html {
-    background-color: black;
+* {
+    box-sizing: border-box;
 }
 
-body {
-    border: 1px solid white;
+html {
+    background-color: #0f0b11;
+}
+
+.calendar-content {
+    color: white;
+}
+
+.rental-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.rental-policy {
+    background-color: #cb2233;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.rental-list {
+    background-color: #cb2233;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.index-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border: 1px solid white;
-    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-buttons a{
+    text-align: center;
+    display: block;
+    margin: 0.5rem 0;
     padding: 0.5rem;
     text-decoration: none;
     border: 1px solid white;
@@ -23,8 +57,62 @@ body {
     background-color: #cb2233;
 }
 
+.nav-buttons a:hover {
+    background-color: white;
+    color: black;
+}
+
 .logo {
     display: block;
     margin: 0 auto;
+}
+
+.month {
+    text-align: center;
+    margin-top: 2rem;
+    background-color: #cb2233;
+    padding: 0.5rem;
     border: 1px solid white;
+}
+
+.dow {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #666;
+}
+
+.dow li {
+  display: inline-block;
+  width: 13%;
+  color: white;
+  text-align: center;
+}
+
+.about-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.blog-content {
+    color: white;
+    text-align: center;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.blog-post {
+    background-color: #cb2233;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
 }
