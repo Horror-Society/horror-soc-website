@@ -7,10 +7,25 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html">
+            <img class="navbar-logo" src="styles/logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="topnav-buttons calendar-topnav">
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="committee.html">OUR COMMITTEE</a></li>
+            <li><a href="rental.html">RENTAL LIST</a></li>
+        </ul>
+    </div>
     <main class="calendar-content">
-        <h1>Event Calendar</h1>
         <div class="month">
-            <h2 id="month-title">SEPTEMBER 2026</h2>
+            <button class="arrow-button" id="prev-month" onclick="previousMonth()">
+                <img src="styles/left-arrow.png" alt="Prev">
+            </button>
+            <h2 id="month-title"></h2>
+            <button class="arrow-button" id="next-month" onclick="nextMonth()">
+                <img src="styles/right-arrow.png" alt="Next">
+            </button>
         </div>
         <div class="dow">
             <ul>
@@ -26,6 +41,14 @@
         <div id="days" class="days">
         </div>
     </main>
-
+    <footer class="calendar-footer">
+        <a href="https://www.instagram.com/horrorsoc/">
+            <img src="styles/instagram.png" alt="Instagram" class="social-icon">
+        </a>
+        <p>&copy; 2026 University of Sheffield Horror Society</p>
+        <a href="https://discord.gg/EJqsHuTgBb">
+            <img src="styles/discord.png" alt="Discord" class="social-icon">
+        </a>
+    </footer>
     <script src="scripts/calendar.js"></script>
 </body>
