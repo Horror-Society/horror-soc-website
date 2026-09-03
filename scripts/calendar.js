@@ -1,20 +1,93 @@
 const daysContainer = document.querySelector("#days");
 
 const events = {
-    "2026-09-22": "Societies Fair (Come Meet us!)",
-    "2026-09-24": "Ghost Walk feat. Strange Britain",
-    "2026-10-02": "Film Friday: The Lost Boys",
-    "2026-10-09": "Film Friday: Fright Night",
-    "2026-10-16": "Film Friday: From Dusk Till Dawn",
-    "2026-10-23": "Film Friday: Dark Shadows",
-    "2026-10-30": "Film Friday: Dracula A.D. 1972",
-    "2026-11-06": "Film Friday: Terrifier",
-    "2026-11-13": "Film Friday: Friday the 13th",
-    "2026-11-20": "Film Friday: A Nightmare on Elm Street",
-    "2026-11-27": "Film Friday: Freddy vs. Jason",
-    "2026-12-04": "Film Friday: Event Horizon",
-    "2026-12-11": "Film Friday: Invasion of the Body Snatchers",
-    "2026-12-18": "Film Friday: Gremlins"
+    "2026-09-22": {
+        name: "Activities Fair",
+        timeLocation: "11:00 - 16:00, Students' Union",
+        description: "Come meet us at the Activities Fair and find out more about Horror Society! We'll have a stall set up in the students' union, there'll be signs in the SU to help you find us.",
+        ticketed: false,
+        ticketLink: ""
+    },
+
+    "2026-09-24": {
+        name: "Ghost Walk feat. Strange Britain",
+        timeLocation: "17:30 - Meet at SU, 18:00-19:30 - Ghost Walk",
+        description: "Horror Society invites you on a ghost walk through Sheffield City Centre, packed with spooky stories, ghostly tales and dark history!",
+        ticketed: true,
+        ticketLink: ""
+    },
+
+    "2026-10-02": {
+        name: "Film: The Lost Boys (1987)",
+        description: "Join us for a screening of The Lost Boys (1987). ",
+        triggerwarnings: ["Violence", "Gore"]
+    },
+
+    "2026-10-09": {
+        name: "Film: Fright Night (1985)",
+        description: "Join us for a screening of Fright Night (1985). ",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-10-16": {
+        name: "Film: From Dusk Till Dawn (1996)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-10-23": {
+        name: "Film: Dark Shadows (2012)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-10-30": {
+        name: "Film: Dracula A.D. 1972 (1972)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-11-06": {
+        name: "Film: Terrifier (2016)",
+        description: "On Halloween night, two friends encounter the terrifying Art the Clown, who stalks them during his murderous rampage.",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-11-13": {
+        name: "Film: Friday the 13th (1980)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-11-20": {
+        name: "Film: A Nightmare on Elm Street (1984)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-11-27": {
+        name: "Film: Freddy vs. Jason (2003)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-12-04": {
+        name: "Film: Event Horizon (1997)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-12-11": {
+        name: "Film: Invasion of the Body Snatchers (1978)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    },
+
+    "2026-12-18": {
+        name: "Film: Gremlins (1984)",
+        description: "",
+        triggerwarnings: ["Contains violence and mature themes."]
+    }
 };
 
 let currentDate = new Date();
@@ -54,6 +127,13 @@ function updateCalendar() {
     // Add boxes for each day of the month
     for (let day = 1; day <= daysInMonth; day++) {
         const dayElement = document.createElement("div");
+        const filmSymbol = document.createElement("IMG");
+        filmSymbol.classList.add("event-icon");
+        filmSymbol.setAttribute("src", "styles/clapperboard-white.png");
+
+        const starSymbol = document.createElement("IMG");
+        starSymbol.classList.add("event-icon");
+        starSymbol.setAttribute("src", "styles/star.png");
 
         dayElement.classList.add("day");
         
@@ -65,7 +145,89 @@ function updateCalendar() {
 
         if (event) {
             dayElement.classList.add("event");
-            dayElement.textContent = `${day}: ${event}`;
+
+            if (event.name.includes("Film")) {
+                dayElement.textContent = `${day}`;
+
+                var dropdownBox = document.createElement("div");
+                dropdownBox.classList.add("dropdown-box");
+                dayElement.appendChild(dropdownBox);
+
+                dropdownBox.appendChild(filmSymbol);
+
+                var eventInfo = document.createElement("div");
+                eventInfo.classList.add("event-info");
+
+                var eventTitle = document.createElement("h3");
+                eventTitle.textContent = event.name.substring(6, event.name.length);
+                eventInfo.appendChild(eventTitle);
+
+                var socialText = document.createElement("p");
+                socialText.textContent = "Pre-film social:";
+                socialText.classList.add("event-details");
+                eventInfo.appendChild(socialText);
+
+                var socialInfo = document.createElement("p");
+                socialInfo.textContent = "18:00 - Bar One, Students' Union";
+                socialInfo.classList.add("event-details");
+                socialInfo.classList.add("social-info");
+                eventInfo.appendChild(socialInfo);
+
+                var filmText = document.createElement("p");
+                filmText.textContent = "Film Screening:";
+                filmText.classList.add("event-details");
+                filmText.classList.add("film-text");
+                eventInfo.appendChild(filmText);
+
+                var filmInfo = document.createElement("p");
+                filmInfo.textContent = "19:00 - Paul White Room, 1st Floor, Students' Union";
+                filmInfo.classList.add("event-details");
+                eventInfo.appendChild(filmInfo);
+
+                /*var eventDescription = document.createElement("p");
+                eventDescription.textContent = event.description;
+                eventDescription.classList.add("event-description");
+                eventInfo.appendChild(eventDescription);*/
+
+                dropdownBox.appendChild(eventInfo);
+            }
+            else {
+                dayElement.textContent = `${day}`;
+
+                var dropdownBox = document.createElement("div");
+                dropdownBox.classList.add("dropdown-box");
+                dayElement.appendChild(dropdownBox);
+
+                dropdownBox.appendChild(starSymbol);
+
+                var eventInfo = document.createElement("div");
+                eventInfo.classList.add("event-info");
+
+                var eventTitle = document.createElement("h3");
+                eventTitle.textContent = event.name;
+                eventInfo.appendChild(eventTitle);
+
+                var eventTimeLocation = document.createElement("p");
+                eventTimeLocation.textContent = event.timeLocation;
+                eventTimeLocation.classList.add("event-details");
+                eventInfo.appendChild(eventTimeLocation);
+
+                var eventDescription = document.createElement("p");
+                eventDescription.textContent = event.description;
+                eventDescription.classList.add("event-description");
+                eventInfo.appendChild(eventDescription);
+
+                if (event.ticketed) {
+                    var ticketLink = document.createElement("a");
+                    ticketLink.href = event.ticketLink;
+                    ticketLink.textContent = "GET TICKETS";
+                    ticketLink.classList.add("ticket-link");
+                    eventInfo.appendChild(ticketLink);
+                }
+
+                dropdownBox.appendChild(eventInfo);
+
+            }
         } else {
             dayElement.textContent = day;
         }

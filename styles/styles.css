@@ -1,3 +1,18 @@
+@font-face {
+        font-family: gothic-body;
+        src: url(fonts/Gothica/Gothica-Book.ttf);
+}
+
+@font-face {
+    font-family: gothic-bold;
+    src: url(fonts/Gothica/Gothica-Bold.ttf);
+}
+
+@font-face {
+    font-family: constantine-bold;
+    src: url(fonts/Constantine/Constantine_Bold.ttf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,13 +31,12 @@ body {
 
 html {
     background-color: #0f0b11;
-    background-image: linear-gradient(to bottom, #0f0b11, #2b2b2a)
 }
 
 .calendar-content {
     color: white;
     width: 80vw;
-    height: 80vh;
+    min-height: 80vh;
     margin: 1rem auto;
 }
 
@@ -32,18 +46,19 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    font-family: 'gothic-bold';
 }
 
-.rental-policy {
+.rental-content h1{
     background-color: #cb2233;
     padding: 1rem;
     border-radius: 5px;
-}
-
-.rental-list {
-    background-color: #cb2233;
-    padding: 1rem;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 .index-content {
@@ -52,7 +67,7 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'gothic-bold';
 }
 
 .nav-buttons {
@@ -95,12 +110,15 @@ html {
     background-color: #cb2233;
     padding: 0.5rem;
     border: 1px solid white;
+
+    font-family: 'constantine-bold';
 }
 
 .dow {
   margin: 0;
   padding: 10px 0;
   background-color: #666;
+  font-family: 'constantine-bold';
 }
 
 .dow ul {
@@ -158,11 +176,9 @@ html {
     min-height: 100px;
     border: 1px solid black;
     background-color: white;
+    font-size: 1rem;
+    font-family: 'gothic-bold';
     color: black;
-}
-
-.calendar-footer {
-    margin-top: 6rem;
 }
 
 .divider {
@@ -174,13 +190,18 @@ html {
 .event {
     background-color: #cb2233;
     color: white;
-    border: 1px solid white;
 }
 
 .empty {
     border: 1px solid black;
     background-color: grey;
     color: white;
+}
+
+.film-icon {
+    width: 100%;
+    margin: auto;
+    height: auto;
 }
 
 .film-strip {
@@ -271,9 +292,20 @@ footer {
     z-index: 1000;
     text-align: center;
     padding: 1rem;
-    background-color: #2b2b2a;
+    background-color: #242424;
     color: white;
     margin-top: auto;
+
+    font-family: 'gothic-body';
+}
+
+.calendar-body footer{
+    margin-top: 9rem;
+    position: block;
+}
+
+footer p {
+    font-size: 0.9rem;
 }
 
 .social-icon {
@@ -288,6 +320,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    font-family: 'gothic-body';
 }
 
 .segment p {
@@ -296,6 +329,7 @@ footer {
 
 .about-content h1, .about-content h2 {
     border-bottom: 2px solid #cb2233;
+    font-family: 'gothic-bold';
 }
 
 .committee-link a{
@@ -304,6 +338,7 @@ footer {
     border-radius: 5px;
     text-decoration: none;
     color: white;
+    font-family: 'gothic-bold';
 }
 
 .committee-link a:hover {
@@ -314,12 +349,13 @@ footer {
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #2b2b2a;
+    background-color: #242424;
     z-index: 1000;
     padding: 0.5rem;
     position: sticky;
     top: 0;
     width: 100%;
+    font-family: 'gothic-bold';
 }
 
 .navbar-logo {
@@ -329,7 +365,7 @@ footer {
 }
 
 .homebar {
-    background-color: #2b2b2a;
+    background-color: #242424;
     z-index: 1000;
     padding: 0.5rem;
     height: 2em;
@@ -348,14 +384,14 @@ footer {
 
 .topnav-buttons a {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: white;
     padding: 0.5rem 1rem;
     border-right: 1px solid #cb2233;
 }
 
 .calendar-topnav a {
-    font-size: 0.8rem;
+    font-size: 0.675rem;
 }
 
 .topnav-buttons li:last-child a {
@@ -394,9 +430,14 @@ footer {
     height: 30vh;
 }
 
+.bio {
+    font-family: 'gothic-body';
+}
+
 .role {
     font-size: 1.2rem;
     font-weight: bold;
+    font-family: 'constantine-bold';
 }
 
 .img-grid {
@@ -427,7 +468,7 @@ footer {
 }
 
 .committee-member h3 {
-    font-family: 'League Spartan';
+    font-family: 'constantine-bold';
 }
 
 .committee-member div{
@@ -446,7 +487,7 @@ footer {
 }
 
 .committee-content h1 {
-    font-family: 'League Spartan';
+    font-family: 'constantine-bold';
     font-size: 2rem;
     color: white;
     text-align: center;
@@ -458,12 +499,108 @@ footer {
 }
 
 .pumpkin-caption {
+    margin: 0 auto;
+}
+
+.dropdown-box {
+    position: relative;
+    display: block;
+}
+
+.event-icon {
+    margin: 0 auto;
+    display: block;
+}
+
+.event-info {
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: #8C1823;
+    text-align: center;
+    padding: 0.5rem;
+    min-width: 40vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1100;
+    margin-bottom: 1rem;
+}
+
+.event-info h3 {
+    font-family: 'constantine-bold';
+    font-size: 1rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.event-description {
+    font-family: 'gothic-body';
+    font-size: 0.9rem;
+    padding: 0.5rem;
     margin-top: 0.5rem;
+    border-top: 2px solid white;
+    text-align: center;
+}
+
+.event-details {
+    font-family: 'gothic-bold';
+    font-size: 0.95rem;
+    padding: 0.2rem;
+    width: 100%;
+}
+
+.event-icon:hover ~ .event-info {display: block;}
+
+.event-info:hover {display: block;}
+
+.social-info {
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+    padding-top: 0rem;
+}
+
+.film-text {
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+}
+
+.ticket-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 5px;
+    font-family: 'gothic-bold';
+}
+
+.ticket-link:hover {
+    background-color: white;
+    color: black;
+}
+
+.about-logo {
+    display: none;
+}
+
+.desktop-image {
+    display: none;
+}
+
+.mobile-images {
+    flex-direction: row;
+}
+
+.mobile-images img{
+    width: 40vw;
+    height: 25vh;
+    display: inline-block;
 }
 
 @media (min-width: 768px) {
     .logo {
-        width: 30vw;
+        width: 25vw;
         height: 40vh;
         margin-top: 2.5rem;
     }
@@ -476,6 +613,15 @@ footer {
         font-size: 1.2rem;
     }
 
+    .segment {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 70vw;
+        font-size: 1.2rem;
+        gap: 3rem;
+    }
+
     .img-segment {
         display: flex;
         flex-direction: row;
@@ -484,8 +630,8 @@ footer {
     }
 
     .single-img {
-        width: 40vw;
-        height: 40vh;
+        width: 65vw;
+        height: 65vh;
     }
 
     .img-grid div{
@@ -516,9 +662,7 @@ footer {
     }
 
     .event-images {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        display: none;
     }
 
     .img-grid {
@@ -534,14 +678,58 @@ footer {
         font-size: 1.5rem;
     }
 
+    .committee-profiles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
     .committee-member {
         width: 30vw;
+        height: auto;
         font-size: 1.2rem;
+        margin: 0 auto;
     }
 
     .committee-member img {
-        width: 80%;
-        height: 40%;
+        width: 20vw;
+        height: 30vh;
+    }
+
+    .rental-content {
+        width: 30vw;
+        height: auto;
+    }
+
+    .event-info {
+        min-width: 20vw;
+    }
+
+    .about-logo {
+        display: block;
+        width: 20vw;
+        height: auto;
+    }
+
+    .desktop-image {
+        display: block;
+        width: 20vw;
+        height: auto;
+    }
+
+    .desktop-ghostwalk {
+        width: 70vw;
+        height: auto;
+    }
+
+    .mobile-images {
+        display: none;
+    }
+
+    .topnav-buttons a {
+        font-size: 0.8rem;
     }
 
 }
