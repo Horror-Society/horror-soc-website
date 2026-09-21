@@ -14,7 +14,7 @@ const events = {
         timeLocation: "17:30 - Meet at SU, 18:00-19:30 - Ghost Walk",
         description: "Horror Society invites you on a ghost walk through Sheffield City Centre, packed with spooky stories, ghostly tales and dark history!",
         ticketed: true,
-        ticketLink: ""
+        ticketLink: "https://su.sheffield.ac.uk/events/id/15492-giag-ghost-walk-through-sheffield"
     },
 
     "2026-10-02": {
